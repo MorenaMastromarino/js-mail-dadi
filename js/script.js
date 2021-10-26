@@ -25,3 +25,35 @@ if(!mailTrovata){
 }else{
   outputMail.innerHTML = 'Puoi accedere, la tua mail è presente nella lista';
 }
+
+
+// Esercizio dadi
+// numero random tra 1 e 6 per il giocatore
+// numero random tra 1 e 6 per il computer
+// controllare quale numero è  più alto
+// output vincitore
+
+const numeroUtente = Math.floor(Math.random() * 6) + 1;
+console.log('numero utente', numeroUtente);
+
+
+const numeroComputer = Math.floor(Math.random() * 6) + 1;
+console.log('numero computer', numeroComputer);
+
+let resultMsg = 'Hai vinto!';
+
+if(numeroUtente < numeroComputer){
+  resultMsg = 'Hai perso!';
+}else if(numeroUtente === numeroComputer){
+  resultMsg = 'Pareggio';
+}
+
+const outputDadi = document.getElementById('output-dadi');
+outputDadi.innerHTML = 
+`
+  <p>
+    Il tuo numero è: <strong>${numeroUtente}</strong><br>
+    Il numero del computer è: <strong>${numeroComputer}</strong><br>
+    Il risultato è: <strong>${resultMsg}</strong>
+  </p>
+`;
